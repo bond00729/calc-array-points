@@ -131,9 +131,9 @@ func subtract (p1 : [String : Int]?, p2 : [String : Int]?) -> [String : Int]! {
     var yResult = 0
     for (key,value) in p1! {
         if key == "x" {
-            xResult -= value
+            xResult += value
         } else if key == "y" {
-            yResult -= value
+            yResult += value
         }
     }
     for (key,value) in p2! {
@@ -150,18 +150,22 @@ func subtract (p1 : [String : Int]?, p2 : [String : Int]?) -> [String : Int]! {
 func add (p1 : [String : Double]?, p2 : [String : Double]?) -> [String : Double]! {
     var xResult : Double = 0
     var yResult : Double = 0
-    for (key,value) in p1! {
-        if key == "x" {
-            xResult += value
-        } else if key == "y" {
-            yResult += value
+    if p1 != nil {
+        for (key,value) in p1! {
+            if key == "x" {
+                xResult += value
+            } else if key == "y" {
+                yResult += value
+            }
         }
     }
-    for (key,value) in p2! {
-        if key == "x" {
-            xResult += value
-        } else if key == "y" {
-            yResult += value
+    if p2 != nil {
+        for (key,value) in p2! {
+            if key == "x" {
+                xResult += value
+            } else if key == "y" {
+                yResult += value
+            }
         }
     }
     return ["x" : xResult, "y" : yResult]
@@ -171,18 +175,22 @@ func add (p1 : [String : Double]?, p2 : [String : Double]?) -> [String : Double]
 func subtract (p1 : [String : Double]?, p2 : [String : Double]?) -> [String : Double]! {
     var xResult : Double = 0
     var yResult : Double = 0
+    if p1 != nil {
     for (key,value) in p1! {
-        if key == "x" {
-            xResult -= value
-        } else if key == "y" {
-            yResult -= value
+            if key == "x" {
+                xResult += value
+            } else if key == "y" {
+                yResult += value
+            }
         }
     }
-    for (key,value) in p2! {
-        if key == "x" {
-            xResult -= value
-        } else if key == "y" {
-            yResult -= value
+    if p2 != nil {
+        for (key,value) in p2! {
+            if key == "x" {
+                xResult -= value
+            } else if key == "y" {
+                yResult -= value
+            }
         }
     }
     return ["x" : xResult, "y" : yResult]

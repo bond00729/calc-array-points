@@ -8,41 +8,90 @@
 
 import Foundation
 
-// Build a Calculator
+/*
+Build a Calculator
+*/
 
+// Adds two integers and returns the sum as an integer
 func add (num1 : Int, num2 : Int) -> Int {
     let sum = num1 + num2
     return sum
 }
 
+// Subtracts two integers and returns the difference as an integer
 func subtact (num1 : Int, num2 : Int) -> Int {
     let difference = num1 + num2
     return difference
 }
 
+// Multiplies two integers and returns the product as an integer
 func multiply (num1 : Int, num2 : Int) -> Int {
     let product = num1 * num2
     return product
 }
 
+// Divides two integers and returns the quotient as an integer
 func divide (num1 : Int, num2 : Int) -> Int {
     let quotient = num1 / num2
     return quotient
 }
 
-func MathOperation (num1 : Int, num2 : Int, op : (Int, Int) -> Int) -> Int {
+// Takes two integers and a math operation and returns the result as an integer
+func mathOperation (num1 : Int, num2 : Int, op : (Int, Int) -> Int) -> Int {
     return op(num1, num2)
 }
 
-// Array Fun
 
-func arrayAdd (array1 : [Int], array2 : [Int]) -> [Int] {
-    let result = array1 + array2
+
+/*
+Array Fun
+*/
+
+// Takes an array of integers and adds the values in it and returns the result as an integer
+func arrayAdd (array : [Int]) -> Int {
+    var result = 0
+    for index in array {
+        result += array[index]
+    }
     return result
 }
 
-func arrayMultiply (array1 : [Int], array2 : [Int]) -> [Int] {
-    let result = array1 * array2
-    for 
+// Takes an array of integers and multiplies the values in it and returns the result as an integer
+func arrayMultiply (array : [Int]) -> Int {
+    var result = 0
+    for index in array {
+        result *= array[index]
+    }
     return result
 }
+
+// Takes an array of integers and returns the number of elements in the array
+func arrayCount(array : [Int]) -> Int {
+    return array.count
+}
+
+// Takes an array of integers and returns the average of all elements in the array
+func average(array : [Int]) -> Int {
+    let sum = arrayAdd(array: array)
+    let count = arrayCount(array: array)
+    return sum / count
+}
+
+func arrayOperation(array : [Int], op : (_ : [Int]) -> Int) -> Int{
+    return op(array)
+}
+
+
+
+/*
+Points
+*/
+
+
+
+
+
+
+
+
+

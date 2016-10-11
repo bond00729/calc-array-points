@@ -43,5 +43,6 @@ func arrayAdd (array1 : [Int], array2 : [Int]) -> [Int] {
 
 func arrayMultiply (array1 : [Int], array2 : [Int]) -> [Int] {
     let result = array1 * array2
+    for 
     return result
 }

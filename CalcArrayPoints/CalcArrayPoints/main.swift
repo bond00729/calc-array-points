@@ -104,7 +104,89 @@ func pointSubtract (point1 : (Int, Int), point2 : (Int, Int)) -> (Int, Int) {
     return result
 }
 
+// Takes two dictionaries composed of a String and an integer and adds the points to create a new dictionary with x and y points
+func dictionaryPointAdd (point1 : [String : Int], point2 : [String : Int]) -> [String : Int] {
+    var xResult = 0
+    var yResult = 0
+    for (key,value) in point1 {
+        if key == "x" {
+            xResult += value
+        } else if key == "y" {
+            yResult += value
+        }
+    }
+    for (key,value) in point2 {
+        if key == "x" {
+            xResult += value
+        } else if key == "y" {
+            yResult += value
+        }
+    }
+    return ["x" : xResult, "y" : yResult]
+}
 
+// Takes two dictionaries composed of a String and an integer and subtracts the points to create a new dictionary with x and y points
+func dictionaryPointSubtract (point1 : [String : Int], point2 : [String : Int]) -> [String : Int] {
+    var xResult = 0
+    var yResult = 0
+    for (key,value) in point1 {
+        if key == "x" {
+            xResult -= value
+        } else if key == "y" {
+            yResult -= value
+        }
+    }
+    for (key,value) in point2 {
+        if key == "x" {
+            xResult -= value
+        } else if key == "y" {
+            yResult -= value
+        }
+    }
+    return ["x" : xResult, "y" : yResult]
+}
+
+// Takes two dictionaries composed of a String and a double and adds the points to create a new dictionary with x and y points
+func dictionaryPointAdd (point1 : [String : Double], point2 : [String : Double]) -> [String : Double] {
+    var xResult : Double = 0
+    var yResult : Double = 0
+    for (key,value) in point1 {
+        if key == "x" {
+            xResult += value
+        } else if key == "y" {
+            yResult += value
+        }
+    }
+    for (key,value) in point2 {
+        if key == "x" {
+            xResult += value
+        } else if key == "y" {
+            yResult += value
+        }
+    }
+    return ["x" : xResult, "y" : yResult]
+}
+
+// Takes two dictionaries composed of a String and a double and subtracts the points to create a new dictionary with x and y points
+func dictionaryPointSubtract (point1 : [String : Double], point2 : [String : Double]) -> [String : Double] {
+    var xResult : Double = 0
+    var yResult : Double = 0
+    for (key,value) in point1 {
+        if key == "x" {
+            xResult -= value
+        } else if key == "y" {
+            yResult -= value
+        }
+    }
+    for (key,value) in point2 {
+        if key == "x" {
+            xResult -= value
+        } else if key == "y" {
+            yResult -= value
+        }
+    }
+    return ["x" : xResult, "y" : yResult]
+}
 
 
 

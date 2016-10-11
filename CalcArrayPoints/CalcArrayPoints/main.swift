@@ -13,32 +13,32 @@ Build a Calculator
 */
 
 // Adds two integers and returns the sum as an integer
-func add (num1 : Int, num2 : Int) -> Int {
-    let sum = num1 + num2
+func add (left : Int, right : Int) -> Int {
+    let sum = left + right
     return sum
 }
 
 // Subtracts two integers and returns the difference as an integer
-func subtact (num1 : Int, num2 : Int) -> Int {
-    let difference = num1 + num2
+func subtract (left : Int, right : Int) -> Int {
+    let difference = left + right
     return difference
 }
 
 // Multiplies two integers and returns the product as an integer
-func multiply (num1 : Int, num2 : Int) -> Int {
-    let product = num1 * num2
+func multiply (left : Int, right : Int) -> Int {
+    let product = left * right
     return product
 }
 
 // Divides two integers and returns the quotient as an integer
-func divide (num1 : Int, num2 : Int) -> Int {
-    let quotient = num1 / num2
+func divide (left : Int, right : Int) -> Int {
+    let quotient = left / right
     return quotient
 }
 
 // Takes two integers and a math operation and returns the result as an integer
-func mathOperation (num1 : Int, num2 : Int, op : (Int, Int) -> Int) -> Int {
-    return op(num1, num2)
+func mathOperation (left : Int, right : Int, operation : (Int, Int) -> Int) -> Int {
+    return operation(left, right)
 }
 
 
@@ -48,7 +48,7 @@ Array Fun
 */
 
 // Takes an array of integers and adds the values in it and returns the result as an integer
-func arrayAdd (array : [Int]) -> Int {
+func add (array : [Int]) -> Int {
     var result = 0
     for index in array {
         result += array[index]
@@ -57,7 +57,7 @@ func arrayAdd (array : [Int]) -> Int {
 }
 
 // Takes an array of integers and multiplies the values in it and returns the result as an integer
-func arrayMultiply (array : [Int]) -> Int {
+func multiply (array : [Int]) -> Int {
     var result = 0
     for index in array {
         result *= array[index]
@@ -66,20 +66,20 @@ func arrayMultiply (array : [Int]) -> Int {
 }
 
 // Takes an array of integers and returns the number of elements in the array
-func arrayCount(array : [Int]) -> Int {
+func count(array : [Int]) -> Int {
     return array.count
 }
 
 // Takes an array of integers and returns the average of all elements in the array
 func average(array : [Int]) -> Int {
-    let sum = arrayAdd(array: array)
-    let count = arrayCount(array: array)
-    return sum / count
+    let sum = add(array: array)
+    let total = count(array: array)
+    return sum / total
 }
 
 // Takes an array of integers and a math operation and returns the result as an integer
-func arrayOperation(array : [Int], op : (_ : [Int]) -> Int) -> Int{
-    return op(array)
+func reduce(array : [Int], operation : (_ : [Int]) -> Int) -> Int{
+    return operation(array)
 }
 
 
@@ -89,33 +89,33 @@ Points
 */
 
 // Takes two points composed of two integers and returns a new point with the values added together
-func pointAdd (point1 : (Int, Int), point2 : (Int, Int)) -> (Int, Int) {
+func add (p1 : (Int, Int), p2 : (Int, Int)) -> (Int, Int) {
     var result = (0, 0)
-    result.0 = point1.0 + point2.0
-    result.1 = point1.1 + point2.1
+    result.0 = p1.0 + p2.0
+    result.1 = p1.1 + p2.1
     return result
 }
 
 // Takes two points composed of two integers and returns a new point after the values have been subtracted
-func pointSubtract (point1 : (Int, Int), point2 : (Int, Int)) -> (Int, Int) {
+func subtract (p1 : (Int, Int), p2 : (Int, Int)) -> (Int, Int) {
     var result = (0, 0)
-    result.0 = point1.0 - point2.0
-    result.1 = point1.1 - point2.1
+    result.0 = p1.0 - p2.0
+    result.1 = p1.1 - p2.1
     return result
 }
 
 // Takes two dictionaries composed of a String and an integer and adds the points to create a new dictionary with x and y points
-func dictionaryPointAdd (point1 : [String : Int], point2 : [String : Int]) -> [String : Int] {
+func add (p1 : [String : Int]?, p2 : [String : Int]?) -> [String : Int]! {
     var xResult = 0
     var yResult = 0
-    for (key,value) in point1 {
+    for (key,value) in p1! {
         if key == "x" {
             xResult += value
         } else if key == "y" {
             yResult += value
         }
     }
-    for (key,value) in point2 {
+    for (key,value) in p2! {
         if key == "x" {
             xResult += value
         } else if key == "y" {
@@ -126,17 +126,17 @@ func dictionaryPointAdd (point1 : [String : Int], point2 : [String : Int]) -> [S
 }
 
 // Takes two dictionaries composed of a String and an integer and subtracts the points to create a new dictionary with x and y points
-func dictionaryPointSubtract (point1 : [String : Int], point2 : [String : Int]) -> [String : Int] {
+func subtract (p1 : [String : Int]?, p2 : [String : Int]?) -> [String : Int]! {
     var xResult = 0
     var yResult = 0
-    for (key,value) in point1 {
+    for (key,value) in p1! {
         if key == "x" {
             xResult -= value
         } else if key == "y" {
             yResult -= value
         }
     }
-    for (key,value) in point2 {
+    for (key,value) in p2! {
         if key == "x" {
             xResult -= value
         } else if key == "y" {
@@ -147,17 +147,17 @@ func dictionaryPointSubtract (point1 : [String : Int], point2 : [String : Int]) 
 }
 
 // Takes two dictionaries composed of a String and a double and adds the points to create a new dictionary with x and y points
-func dictionaryPointAdd (point1 : [String : Double], point2 : [String : Double]) -> [String : Double] {
+func add (p1 : [String : Double]?, p2 : [String : Double]?) -> [String : Double]! {
     var xResult : Double = 0
     var yResult : Double = 0
-    for (key,value) in point1 {
+    for (key,value) in p1! {
         if key == "x" {
             xResult += value
         } else if key == "y" {
             yResult += value
         }
     }
-    for (key,value) in point2 {
+    for (key,value) in p2! {
         if key == "x" {
             xResult += value
         } else if key == "y" {
@@ -168,17 +168,17 @@ func dictionaryPointAdd (point1 : [String : Double], point2 : [String : Double])
 }
 
 // Takes two dictionaries composed of a String and a double and subtracts the points to create a new dictionary with x and y points
-func dictionaryPointSubtract (point1 : [String : Double], point2 : [String : Double]) -> [String : Double] {
+func subtract (p1 : [String : Double]?, p2 : [String : Double]?) -> [String : Double]! {
     var xResult : Double = 0
     var yResult : Double = 0
-    for (key,value) in point1 {
+    for (key,value) in p1! {
         if key == "x" {
             xResult -= value
         } else if key == "y" {
             yResult -= value
         }
     }
-    for (key,value) in point2 {
+    for (key,value) in p2! {
         if key == "x" {
             xResult -= value
         } else if key == "y" {

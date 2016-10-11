@@ -20,7 +20,7 @@ func add (left : Int, right : Int) -> Int {
 
 // Subtracts two integers and returns the difference as an integer
 func subtract (left : Int, right : Int) -> Int {
-    let difference = left + right
+    let difference = left - right
     return difference
 }
 
@@ -50,7 +50,7 @@ Array Fun
 // Takes an array of integers and adds the values in it and returns the result as an integer
 func add (array : [Int]) -> Int {
     var result = 0
-    for index in array {
+    for index in 0...array.count - 1 {
         result += array[index]
     }
     return result
@@ -58,8 +58,8 @@ func add (array : [Int]) -> Int {
 
 // Takes an array of integers and multiplies the values in it and returns the result as an integer
 func multiply (array : [Int]) -> Int {
-    var result = 0
-    for index in array {
+    var result = array[0]
+    for index in 1...array.count - 1 {
         result *= array[index]
     }
     return result

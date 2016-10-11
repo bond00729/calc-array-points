@@ -77,6 +77,7 @@ func average(array : [Int]) -> Int {
     return sum / count
 }
 
+// Takes an array of integers and a math operation and returns the result as an integer
 func arrayOperation(array : [Int], op : (_ : [Int]) -> Int) -> Int{
     return op(array)
 }
@@ -87,7 +88,21 @@ func arrayOperation(array : [Int], op : (_ : [Int]) -> Int) -> Int{
 Points
 */
 
+// Takes two points composed of two integers and returns a new point with the values added together
+func pointAdd (point1 : (Int, Int), point2 : (Int, Int)) -> (Int, Int) {
+    var result = (0, 0)
+    result.0 = point1.0 + point2.0
+    result.1 = point1.1 + point2.1
+    return result
+}
 
+// Takes two points composed of two integers and returns a new point after the values have been subtracted
+func pointSubtract (point1 : (Int, Int), point2 : (Int, Int)) -> (Int, Int) {
+    var result = (0, 0)
+    result.0 = point1.0 - point2.0
+    result.1 = point1.1 - point2.1
+    return result
+}
 
 
 
